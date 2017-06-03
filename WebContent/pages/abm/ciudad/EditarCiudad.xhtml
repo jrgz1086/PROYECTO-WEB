@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	template="/pages/templates/template.xhtml">
+
+	<ui:define name="metadata">
+	</ui:define>
+
+	<ui:define name="content">
+
+		<h:head>Editar Ciudad</h:head>
+		<h:body>
+			<h:form>
+				<h:panelGrid border="1" columns="2">
+					<h:outputText value="#{msg['label.codigo']}"></h:outputText>
+					<p:inputText value="#{ciudadMBean.ciudad.codigo}"></p:inputText>
+					<h:outputText value="#{msg['label.descripcion']}"></h:outputText>
+					<p:inputText value="#{ciudadMBean.ciudad.descripcion}"></p:inputText>
+				</h:panelGrid>
+				<p:commandButton value="#{msg['label.actualizar']}"
+					action="#{ciudadMBean.actualizar}" />
+				<p:commandButton value="#{msg['label.atras']}" action="#{ciudadMBean.irALaConsulta}" />
+			</h:form>
+		</h:body>
+	</ui:define>
+</ui:composition>

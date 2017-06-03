@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	template="/pages/templates/template.xhtml">
+
+	<ui:define name="metadata">
+	</ui:define>
+
+	<ui:define name="content">
+		<h:head>Listado de Ciudades</h:head>
+		<h:body>
+			<h:form>
+				<p:dataTable var="ciudad" value="#{ciudadMBean.listarCiudades()}"
+				paginator="true" rows="10">
+					<p:column headerText="#{msg['label.codigo']}" style="color: red;">
+						<h:commandLink action="#{ciudadMBean.editar(ciudad)}">
+							<h:outputText value="#{ciudad.codigo}"></h:outputText>
+						</h:commandLink>
+					</p:column>
+					<p:column headerText="#{msg['label.descripcion']}">
+						<h:outputText value="#{ciudad.descripcion}"></h:outputText>
+					</p:column>
+				</p:dataTable>
+				<p:commandButton value="#{msg['label.nuevo']}" id="bNuevaCiudad"
+					action="#{ciudadMBean.nuevo()}" ajax="false">
+				</p:commandButton>
+			</h:form>
+		</h:body>
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	template="/pages/templates/template.xhtml">
+
+	<ui:define name="metadata">
+	</ui:define>
+
+	<ui:define name="content">
+		<h:head>Editar Prestamo</h:head>
+		<h:body>
+			<h:form>
+				<h:panelGrid border="1" columns="2">
+					<h:outputText value="Número"></h:outputText>
+					<p:inputText value="#{prestamoMBean.prestamo.numero}"></p:inputText>
+					<h:outputText value="Fecha"></h:outputText>
+					<p:calendar value="#{prestamoMBean.prestamo.fecha}" showOn="button" />
+					<h:outputText value="Cliente"></h:outputText>
+					<p:selectOneMenu value="#{prestamoMBean.prestamo.cliente.codigo}"
+						style="width:150px">
+						<f:selectItem itemLabel="Seleccione Cliente" itemValue=""
+							noSelectionOption="true" />
+						<f:selectItems value="#{clienteMBean.listarClientes()}"
+							var="cliente" itemLabel="#{cliente.nombre}"
+							itemValue="#{cliente.codigo}" />
+					</p:selectOneMenu>
+					<h:outputText value="Total"></h:outputText>
+					<p:inputText value="#{prestamoMBean.prestamo.total}"></p:inputText>
+					<h:outputText value="Observación"></h:outputText>
+					<p:inputText value="#{prestamoMBean.prestamo.observacion}"></p:inputText>
+				</h:panelGrid>
+				<br />
+				<table>
+					<tr>
+						<td><h:panelGrid border="1" columns="2">
+								<c:if test="#{prestamoMBean.prestamo.numero == 0}">
+									<h:outputText value="Libro"></h:outputText>
+									<p:selectOneMenu
+										value="#{prestamoMBean.prestamoLibro.libro.codigo}"
+										style="width:150px">
+										<f:selectItem itemLabel="Seleccione Libro" itemValue=""
+											noSelectionOption="true" />
+										<f:selectItems value="#{libroMBean.listarLibros()}"
+											var="libro" itemLabel="#{libro.descripcion}"
+											itemValue="#{libro.codigo}" />
+									</p:selectOneMenu>
+									<h:outputText value="Dias"></h:outputText>
+									<p:inputText id="cantidad" value="#{prestamoMBean.prestamoLibro.dias}">
+										<f:validateLength minimum="1" maximum="3" />
+										<h:message for="cantidad" style="color:red" />
+									</p:inputText>
+									<h:outputText value="Valor"></h:outputText>
+									<p:inputText value="#{prestamoMBean.prestamoLibro.valor}"></p:inputText>
+								</c:if>
+							</h:panelGrid></td>
+						<td width="1"><c:if
+								test="#{prestamoMBean.prestamo.numero == 0}">
+								<p:commandButton value="Agregar"
+									action="#{prestamoMBean.agregar}" ajax="false" />
+							</c:if> <p:dataTable var="prestamoLibro"
+								value="#{prestamoMBean.listarPrestamosLibros()}">
+								<p:column headerText="Libro">
+									<h:outputText value="#{prestamoLibro.libro.descripcion}"></h:outputText>
+								</p:column>
+								<p:column headerText="Días">
+									<h:outputText value="#{prestamoLibro.dias}"></h:outputText>
+								</p:column>
+								<p:column headerText="Valor">
+									<h:outputText value="#{prestamoLibro.valor}"></h:outputText>
+								</p:column>
+								<p:column headerText="Estado">
+									<h:outputText value="Prestado"
+										rendered="#{prestamoLibro.estado == 0}"></h:outputText>
+									<h:outputText value="Devuelto"
+										rendered="#{prestamoLibro.estado == 1}"></h:outputText>
+									<h:outputText value="(#{prestamoLibro.fechaDevolucion})"
+										rendered="#{prestamoLibro.estado == 1}"></h:outputText>
+								</p:column>
+								<p:column headerText="Acción" style="color: red;">
+									<c:if test="#{prestamoMBean.prestamo.numero == 0}">
+										<h:commandLink action="#{prestamoMBean.quitar(prestamoLibro)}">
+											<h:outputText value="Quitar"></h:outputText>
+										</h:commandLink>
+									</c:if>
+									<c:if test="#{prestamoMBean.prestamo.numero > 0}">
+										<h:commandLink
+											action="#{prestamoMBean.devolver(prestamoLibro)}"
+											rendered="#{prestamoLibro.estado == 0}">
+											<h:outputText value="Devolver"></h:outputText>
+										</h:commandLink>
+									</c:if>
+								</p:column>
+							</p:dataTable></td>
+					</tr>
+				</table>
+				<br />
+				<p:commandButton value="Actualizar"
+					action="#{prestamoMBean.actualizar}" />
+				<p:commandButton value="Atras"
+					action="#{prestamoMBean.irALaConsulta}" />
+			</h:form>
+		</h:body>
+	</ui:define>
+</ui:composition>

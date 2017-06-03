@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	template="/pages/templates/template.xhtml">
+
+	<ui:define name="metadata">
+	</ui:define>
+
+	<ui:define name="content">
+		<h:head>Listado de Clientes</h:head>
+		<h:body>
+			<h:form>
+				<p:dataTable var="cliente" value="#{clienteMBean.listarClientes()}">
+					<p:column headerText="Codigo" style="color: red;">
+						<h:commandLink action="#{clienteMBean.editar(cliente)}">
+							<h:outputText value="#{cliente.codigo}"></h:outputText>
+						</h:commandLink>
+					</p:column>
+					<p:column headerText="Nombre">
+						<h:outputText value="#{cliente.nombre}"></h:outputText>
+					</p:column>
+					<p:column headerText="Dirección">
+						<h:outputText value="#{cliente.direccion}"></h:outputText>
+					</p:column>
+					<p:column headerText="Ciudad">
+						<h:outputText value="#{cliente.ciudad.descripcion}"></h:outputText>
+					</p:column>
+					<p:column headerText="Observación">
+						<h:outputText value="#{cliente.obs}"></h:outputText>
+					</p:column>
+				</p:dataTable>
+				<p:commandButton value="Nuevo" id="bNuevaCliente"
+					action="#{clienteMBean.nuevo()}" ajax="false">
+				</p:commandButton>
+			</h:form>
+		</h:body>
+	</ui:define>
+</ui:composition>

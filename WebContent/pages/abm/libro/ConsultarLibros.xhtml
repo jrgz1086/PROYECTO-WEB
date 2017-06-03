@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	template="/pages/templates/template.xhtml">
+
+	<ui:define name="metadata">
+	</ui:define>
+
+	<ui:define name="content">
+		<h:head>Listado de Libros</h:head>
+		<h:body>
+			<h:form>
+				<p:dataTable var="libro" value="#{libroMBean.listarLibros()}">
+					<p:column headerText="Codigo" style="color: red;">
+						<h:commandLink action="#{libroMBean.editar(libro)}">
+							<h:outputText value="#{libro.codigo}"></h:outputText>
+						</h:commandLink>
+					</p:column>
+					<p:column headerText="Nombre">
+						<h:outputText value="#{libro.descripcion}"></h:outputText>
+					</p:column>
+					<p:column headerText="Cantidad">
+						<h:outputText value="#{libro.cantidad}"></h:outputText>
+					</p:column>
+					<p:column headerText="Observación">
+						<h:outputText value="#{libro.obs}"></h:outputText>
+					</p:column>
+				</p:dataTable>
+				<p:commandButton value="Nuevo" id="bNuevaLibro"
+					action="#{libroMBean.nuevo()}" ajax="false">
+				</p:commandButton>
+			</h:form>
+		</h:body>
+	</ui:define>
+</ui:composition>

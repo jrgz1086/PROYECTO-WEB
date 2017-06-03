@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14940386516090" configfile="/PROYECTO-WEB/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="EditarCiudad.xhtml" x="338" y="178" id="pf14940725562320" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" outlinks="pf14940725562321" inlinks="pf14940725562322" path="/pages/abm/ciudad/EditarCiudad.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="ConsultarCiudades.xhtml" x="122" y="178" id="pf14940725562323" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf14940725562322" inlinks="pf14940725562321" path="/pages/abm/ciudad/ConsultarCiudades.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="EditarCliente.xhtml" x="338" y="562" id="pf14940725562324" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" outlinks="pf14940725562325" inlinks="pf14940725562326" path="/pages/abm/cliente/EditarCliente.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="ConsultarClientes.xhtml" x="122" y="562" id="pf14940725562327" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf14940725562326" inlinks="pf14940725562325" path="/pages/abm/cliente/ConsultarClientes.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="EditarLibro.xhtml" x="338" y="946" id="pf14940739792998" referenceLink="//@navigationRule.5/@navigationCase.0/@toViewId|" outlinks="pf14940739792999" inlinks="pf149407397929910" path="/pages/abm/libro/EditarLibro.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="ConsultarLibros.xhtml" x="122" y="946" id="pf149407397929911" referenceLink="//@navigationRule.5/@fromViewId|" outlinks="pf149407397929910" inlinks="pf14940739792999" path="/pages/abm/libro/ConsultarLibros.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="EditarPrestamo.xhtml" x="338" y="1330" id="pf149408509152812" referenceLink="//@navigationRule.7/@navigationCase.0/@toViewId|" outlinks="pf149408509152813 pf149408509152814" inlinks="pf149408509152814 pf149408509152815" path="/pages/mov/prestamo/EditarPrestamo.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="ConsultarPrestamos.xhtml" x="122" y="1330" id="pf149408509152816" referenceLink="//@navigationRule.7/@fromViewId|" outlinks="pf149408509152815" inlinks="pf149408509152813" path="/pages/mov/prestamo/ConsultarPrestamos.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="login.xhtml" x="122" y="1714" id="pf14943775902260" referenceLink="//@navigationRule.8/@navigationCase.1/@toViewId|" outlinks="pf14943775902261 pf14943775902262" inlinks="pf14943775902262" path="/pages/login/login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/templates/template.xhtml" x="338" y="1714" id="pf14943775902263" referenceLink="//@navigationRule.8/@navigationCase.0/@toViewId|" inlinks="pf14943775902261" path="/pages/templates/template.xhtml"/>
+  <links id="pf14940725562321" target="pf14940725562323" source="pf14940725562320" outcome="LISTA_CIUDAD"/>
+  <links id="pf14940725562322" target="pf14940725562320" source="pf14940725562323" outcome="DETALLE_CIUDAD"/>
+  <links id="pf14940725562325" target="pf14940725562327" source="pf14940725562324" outcome="LISTA_CLIENTE"/>
+  <links id="pf14940725562326" target="pf14940725562324" source="pf14940725562327" outcome="DETALLE_CLIENTE"/>
+  <links id="pf14940739792999" target="pf149407397929911" source="pf14940739792998" outcome="LISTA_LIBRO"/>
+  <links id="pf149407397929910" target="pf14940739792998" source="pf149407397929911" outcome="DETALLE_LIBRO"/>
+  <links id="pf149408509152813" target="pf149408509152816" source="pf149408509152812" outcome="LISTA_PRESTAMO"/>
+  <links id="pf149408509152815" target="pf149408509152812" source="pf149408509152816" outcome="DETALLE_PRESTAMO"/>
+  <links id="pf14943775902261" target="pf14943775902263" source="pf14943775902260" outcome="LOGIN_OK"/>
+  <links id="pf149408509152814" target="pf149408509152812" source="pf149408509152812" outcome="DETALLE_PRESTAMO">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf14943775902262" target="pf14943775902260" source="pf14943775902260" outcome="LOGIN_NOK">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+</pageflow:Pageflow>

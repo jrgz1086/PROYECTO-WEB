@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	template="/pages/templates/template.xhtml">
+
+	<ui:define name="metadata">
+	</ui:define>
+
+	<ui:define name="content">
+		<h:head>Editar Cliente</h:head>
+		<h:body>
+			<h:form>
+				<h:panelGrid border="1" columns="2">
+					<h:outputText value="Codigo"></h:outputText>
+					<p:inputText value="#{clienteMBean.cliente.codigo}"></p:inputText>
+					<h:outputText value="Descripcion"></h:outputText>
+					<p:inputText value="#{clienteMBean.cliente.nombre}" required="true"
+						requiredMessage="El nombre es obligatorio"></p:inputText>
+					<h:outputText value="Dirección"></h:outputText>
+					<p:inputText value="#{clienteMBean.cliente.direccion}">
+						<f:validator validatorId="NombreClienteValidator" />
+					</p:inputText>
+					<h:outputText value="Ciudad"></h:outputText>
+					<p:selectOneMenu value="#{clienteMBean.cliente.ciudad.codigo}"
+						style="width:150px">
+						<f:selectItem itemLabel="Seleccione Ciudad" itemValue=""
+							noSelectionOption="true" />
+						<f:selectItems value="#{ciudadMBean.listarCiudades()}"
+							var="ciudad" itemLabel="#{ciudad.descripcion}"
+							itemValue="#{ciudad.codigo}" />
+					</p:selectOneMenu>
+					<h:outputText value="Observación"></h:outputText>
+					<p:inputText value="#{clienteMBean.cliente.obs}"></p:inputText>
+				</h:panelGrid>
+				<p:commandButton value="Actualizar"
+					action="#{clienteMBean.actualizar}" />
+				<p:commandButton value="Atras"
+					action="#{clienteMBean.irALaConsulta}" />
+			</h:form>
+		</h:body>
+	</ui:define>
+</ui:composition>

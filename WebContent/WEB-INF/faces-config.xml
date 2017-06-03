@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+	version="2.2">
+
+	<application>
+		<locale-config>
+			<default-locale>es</default-locale>
+		</locale-config>
+		<resource-bundle>
+			<base-name>language</base-name>
+			<var>msg</var>
+		</resource-bundle>
+	</application>
+
+	<managed-bean>
+		<managed-bean-name>ciudadMBean</managed-bean-name>
+		<managed-bean-class>com.biblioteca.abm.mbean.CiudadMBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>clienteMBean</managed-bean-name>
+		<managed-bean-class>com.biblioteca.abm.mbean.ClienteMBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>libroMBean</managed-bean-name>
+		<managed-bean-class>com.biblioteca.abm.mbean.LibroMBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>prestamoMBean</managed-bean-name>
+		<managed-bean-class>com.biblioteca.mov.mbean.PrestamoMBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>loginMBean</managed-bean-name>
+		<managed-bean-class>com.biblioteca.util.mbean.LoginMBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>internacionalizacion</managed-bean-name>
+		<managed-bean-class>com.biblioteca.util.mbean.InternacionalizacionBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+
+	<navigation-rule>
+		<display-name>EditarCiudad.xhtml</display-name>
+		<from-view-id>/pages/abm/ciudad/EditarCiudad.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>LISTA_CIUDAD</from-outcome>
+			<to-view-id>/pages/abm/ciudad/ConsultarCiudades.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>ConsultarCiudades.xhtml</display-name>
+		<from-view-id>/pages/abm/ciudad/ConsultarCiudades.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>DETALLE_CIUDAD</from-outcome>
+			<to-view-id>/pages/abm/ciudad/EditarCiudad.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<display-name>EditarCliente.xhtml</display-name>
+		<from-view-id>/pages/abm/cliente/EditarCliente.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>LISTA_CLIENTE</from-outcome>
+			<to-view-id>/pages/abm/cliente/ConsultarClientes.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>ConsultarClientes.xhtml</display-name>
+		<from-view-id>/pages/abm/cliente/ConsultarClientes.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>DETALLE_CLIENTE</from-outcome>
+			<to-view-id>/pages/abm/cliente/EditarCliente.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<display-name>EditarLibro.xhtml</display-name>
+		<from-view-id>/pages/abm/libro/EditarLibro.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>LISTA_LIBRO</from-outcome>
+			<to-view-id>/pages/abm/libro/ConsultarLibros.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>ConsultarLibros.xhtml</display-name>
+		<from-view-id>/pages/abm/libro/ConsultarLibros.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>DETALLE_LIBRO</from-outcome>
+			<to-view-id>/pages/abm/libro/EditarLibro.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<display-name>EditarPrestamo.xhtml</display-name>
+		<from-view-id>/pages/mov/prestamo/EditarPrestamo.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>LISTA_PRESTAMO</from-outcome>
+			<to-view-id>/pages/mov/prestamo/ConsultarPrestamos.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>DETALLE_PRESTAMO</from-outcome>
+			<to-view-id>/pages/mov/prestamo/EditarPrestamo.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>ConsultarPrestamos.xhtml</display-name>
+		<from-view-id>/pages/mov/prestamo/ConsultarPrestamos.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>DETALLE_PRESTAMO</from-outcome>
+			<to-view-id>/pages/mov/prestamo/EditarPrestamo.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<display-name>login.xhtml</display-name>
+		<from-view-id>/pages/login/login.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>LOGIN_OK</from-outcome>
+			<to-view-id>/pages/templates/template.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>LOGIN_NOK</from-outcome>
+			<to-view-id>/pages/login/login.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<display-name>InformeCiudad.xhtml</display-name>
+		<from-view-id>/pages/inf/ciudad/InformeCiudad.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>INFORME_CIUDAD</from-outcome>
+			<to-view-id>/pages/inf/ciudad/InformeCiudadPdf.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+</faces-config>
