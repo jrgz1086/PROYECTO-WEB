@@ -13,8 +13,8 @@
 		<h:head>Listado de Ciudades</h:head>
 		<h:body>
 			<h:form>
-				<p:dataTable var="ciudad" value="#{ciudadMBean.listarCiudades()}"
-				paginator="true" rows="10">
+				<p:dataTable id="table" var="ciudad"
+					value="#{ciudadMBean.listarCiudades()}" paginator="true" rows="10">
 					<p:column headerText="#{msg['label.codigo']}" style="color: red;">
 						<h:commandLink action="#{ciudadMBean.editar(ciudad)}">
 							<h:outputText value="#{ciudad.codigo}"></h:outputText>
@@ -22,6 +22,18 @@
 					</p:column>
 					<p:column headerText="#{msg['label.descripcion']}">
 						<h:outputText value="#{ciudad.descripcion}"></h:outputText>
+					</p:column>
+					<p:column headerText="Acciones">
+						<p:commandLink value="Eliminar" actionListener="#{ciudadMBean.eliminar(ciudad)}"
+							update="table">
+							<p:confirm header="Eliminar" message="Está seguro?" icon="ui-icon-alert" />
+						</p:commandLink>
+						<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+							<p:commandButton value="Si" type="button"
+								styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+							<p:commandButton value="No" type="button"
+								styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+						</p:confirmDialog>
 					</p:column>
 				</p:dataTable>
 				<p:commandButton value="#{msg['label.nuevo']}" id="bNuevaCiudad"

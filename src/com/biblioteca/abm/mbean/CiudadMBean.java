@@ -57,6 +57,14 @@ public class CiudadMBean {
 		this.ciudad = ciudadEditar;
 		return "DETALLE_CIUDAD";
 	}
+	
+	public void eliminar(Ciudad ciudadEliminar){
+		try {
+			cfr.eliminar(ciudadEliminar.getCodigo());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
 	public String nuevo() {
 		log.info("*** nuevo ***");
