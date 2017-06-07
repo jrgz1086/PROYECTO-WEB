@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#pages#abm#ciudad#EditarCiudad.xhtml"
+  PATH="/pages/abm/ciudad/EditarCiudad.xhtml" SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#abm#ciudad#EditarCiudad.xhtml:0"
+   NAME="item" PATH="/pages/abm/ciudad/EditarCiudad.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="LISTA_CIUDAD::#pages#abm#ciudad#ConsultarCiudades.xhtml"
+    NAME="output" PATH="/pages/abm/ciudad/ConsultarCiudades.xhtml"
+    TARGET="rules:#pages#abm#ciudad#ConsultarCiudades.xhtml"
+    TITLE="LISTA_CIUDAD" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#abm#ciudad#ConsultarCiudades.xhtml"
+  PATH="/pages/abm/ciudad/ConsultarCiudades.xhtml" SHAPE="240,33,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#abm#ciudad#ConsultarCiudades.xhtml:0"
+   NAME="item" PATH="/pages/abm/ciudad/ConsultarCiudades.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="DETALLE_CIUDAD::#pages#abm#ciudad#EditarCiudad.xhtml"
+    NAME="output" PATH="/pages/abm/ciudad/EditarCiudad.xhtml"
+    TARGET="rules:#pages#abm#ciudad#EditarCiudad.xhtml"
+    TITLE="DETALLE_CIUDAD" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#abm#cliente#EditarCliente.xhtml"
+  PATH="/pages/abm/cliente/EditarCliente.xhtml" SHAPE="32,129,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#abm#cliente#EditarCliente.xhtml:0"
+   NAME="item" PATH="/pages/abm/cliente/EditarCliente.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="LISTA_CLIENTE::#pages#abm#cliente#ConsultarClientes.xhtml"
+    NAME="output" PATH="/pages/abm/cliente/ConsultarClientes.xhtml"
+    TARGET="rules:#pages#abm#cliente#ConsultarClientes.xhtml"
+    TITLE="LISTA_CLIENTE" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#abm#cliente#ConsultarClientes.xhtml"
+  PATH="/pages/abm/cliente/ConsultarClientes.xhtml" SHAPE="240,145,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#abm#cliente#ConsultarClientes.xhtml:0"
+   NAME="item" PATH="/pages/abm/cliente/ConsultarClientes.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="DETALLE_CLIENTE::#pages#abm#cliente#EditarCliente.xhtml"
+    NAME="output" PATH="/pages/abm/cliente/EditarCliente.xhtml"
+    TARGET="rules:#pages#abm#cliente#EditarCliente.xhtml"
+    TITLE="DETALLE_CLIENTE" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#abm#libro#EditarLibro.xhtml"
+  PATH="/pages/abm/libro/EditarLibro.xhtml" SHAPE="32,241,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#abm#libro#EditarLibro.xhtml:0"
+   NAME="item" PATH="/pages/abm/libro/EditarLibro.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="LISTA_LIBRO::#pages#abm#libro#ConsultarLibros.xhtml"
+    NAME="output" PATH="/pages/abm/libro/ConsultarLibros.xhtml"
+    TARGET="rules:#pages#abm#libro#ConsultarLibros.xhtml"
+    TITLE="LISTA_LIBRO" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#abm#libro#ConsultarLibros.xhtml"
+  PATH="/pages/abm/libro/ConsultarLibros.xhtml" SHAPE="240,257,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#abm#libro#ConsultarLibros.xhtml:0"
+   NAME="item" PATH="/pages/abm/libro/ConsultarLibros.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="DETALLE_LIBRO::#pages#abm#libro#EditarLibro.xhtml" NAME="output"
+    PATH="/pages/abm/libro/EditarLibro.xhtml"
+    TARGET="rules:#pages#abm#libro#EditarLibro.xhtml"
+    TITLE="DETALLE_LIBRO" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#mov#prestamo#EditarPrestamo.xhtml"
+  PATH="/pages/mov/prestamo/EditarPrestamo.xhtml" SHAPE="48,353,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#mov#prestamo#EditarPrestamo.xhtml:0"
+   NAME="item" PATH="/pages/mov/prestamo/EditarPrestamo.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="LISTA_PRESTAMO::#pages#mov#prestamo#ConsultarPrestamos.xhtml"
+    NAME="output" PATH="/pages/mov/prestamo/ConsultarPrestamos.xhtml"
+    TARGET="rules:#pages#mov#prestamo#ConsultarPrestamos.xhtml"
+    TITLE="LISTA_PRESTAMO" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="DETALLE_PRESTAMO::#pages#mov#prestamo#EditarPrestamo.xhtml"
+    NAME="output1" PATH="/pages/mov/prestamo/EditarPrestamo.xhtml"
+    TARGET="rules:#pages#mov#prestamo#EditarPrestamo.xhtml"
+    TITLE="DETALLE_PRESTAMO" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#mov#prestamo#ConsultarPrestamos.xhtml"
+  PATH="/pages/mov/prestamo/ConsultarPrestamos.xhtml"
+  SHAPE="272,369,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#pages#mov#prestamo#ConsultarPrestamos.xhtml:0" NAME="item"
+   PATH="/pages/mov/prestamo/ConsultarPrestamos.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="DETALLE_PRESTAMO::#pages#mov#prestamo#EditarPrestamo.xhtml"
+    NAME="output" PATH="/pages/mov/prestamo/EditarPrestamo.xhtml"
+    TARGET="rules:#pages#mov#prestamo#EditarPrestamo.xhtml"
+    TITLE="DETALLE_PRESTAMO" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#login#login.xhtml"
+  PATH="/pages/login/login.xhtml" SHAPE="32,497,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#login#login.xhtml:0" NAME="item"
+   PATH="/pages/login/login.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="LOGIN_OK::#pages#templates#template.xhtml"
+    NAME="output" PATH="/pages/templates/template.xhtml"
+    TARGET="rules:#pages#templates#template.xhtml" TITLE="LOGIN_OK" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="LOGIN_NOK::#pages#login#login.xhtml"
+    NAME="output1" PATH="/pages/login/login.xhtml"
+    TARGET="rules:#pages#login#login.xhtml" TITLE="LOGIN_NOK" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#inf#ciudad#InformeCiudad.xhtml"
+  PATH="/pages/inf/ciudad/InformeCiudad.xhtml" SHAPE="32,641,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#inf#ciudad#InformeCiudad.xhtml:0"
+   NAME="item" PATH="/pages/inf/ciudad/InformeCiudad.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="INFORME_CIUDAD::#pages#inf#ciudad#InformeCiudadPdf.xhtml"
+    NAME="output" PATH="/pages/inf/ciudad/InformeCiudadPdf.xhtml"
+    TARGET="rules:#pages#inf#ciudad#InformeCiudadPdf.xhtml"
+    TITLE="INFORME_CIUDAD" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#templates#template.xhtml"
+  PATH="/pages/templates/template.xhtml" SHAPE="256,513,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#pages#inf#ciudad#InformeCiudadPdf.xhtml"
+  PATH="/pages/inf/ciudad/InformeCiudadPdf.xhtml" SHAPE="240,657,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#pages#abm#usuario#EditarUsuario.xhtml"
+  PATH="/pages/abm/usuario/EditarUsuario.xhtml" SHAPE="32,753,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#abm#usuario#EditarUsuario.xhtml:0"
+   NAME="item" PATH="/pages/abm/usuario/EditarUsuario.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="LISTA_USUARIO::#pages#abm#usuario#ConsultarUsuarios.xhtml"
+    NAME="output" PATH="/pages/abm/usuario/ConsultarUsuarios.xhtml"
+    TARGET="rules:#pages#abm#usuario#ConsultarUsuarios.xhtml"
+    TITLE="LISTA_USUARIO" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#abm#usuario#ConsultarUsuarios.xhtml"
+  PATH="/pages/abm/usuario/ConsultarUsuarios.xhtml" SHAPE="240,769,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#abm#usuario#ConsultarUsuarios.xhtml:0"
+   NAME="item" PATH="/pages/abm/usuario/ConsultarUsuarios.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="DETALLE_USUARIO::#pages#abm#usuario#EditarUsuario.xhtml"
+    NAME="output" PATH="/pages/abm/usuario/EditarUsuario.xhtml"
+    TARGET="rules:#pages#abm#usuario#EditarUsuario.xhtml"
+    TITLE="DETALLE_USUARIO" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+</PROCESS>

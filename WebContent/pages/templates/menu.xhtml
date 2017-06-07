@@ -9,6 +9,8 @@
 				style="width:213px; height:483px; border:none; font-size:small; padding:0px;"
 				ajax="false" type="sliding" backLabel="#{msg['menu.back']}">
 				<p:submenu label="Tablas" icon="ui-icon ui-icon-refresh">
+					<p:menuitem value="Registro de Usuarios"
+						url="/pages/abm/usuario/ConsultarUsuarios.xhtml" />
 					<p:menuitem value="Registro de Ciudades"
 						url="/pages/abm/ciudad/ConsultarCiudades.xhtml" />
 					<p:menuitem value="Registro de Clientes"
@@ -27,8 +29,7 @@
 						url="/pages/inf/ciudad/InformeCiudad.xhtml" />
 				</p:submenu>
 				<p:submenu label="Procesos" icon="ui-icon ui-icon-refresh">
-					<p:menuitem value="Enviar Mail"
-						url="/pages/proc/EnviarMail.xhtml" />
+					<p:menuitem value="Enviar Mail" url="/pages/proc/EnviarMail.xhtml" />
 				</p:submenu>
 			</p:menu>
 		</p:outputPanel>

@@ -15,6 +15,11 @@
 	</application>
 
 	<managed-bean>
+		<managed-bean-name>usuarioMBean</managed-bean-name>
+		<managed-bean-class>com.biblioteca.abm.mbean.UsuarioMBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
 		<managed-bean-name>ciudadMBean</managed-bean-name>
 		<managed-bean-class>com.biblioteca.abm.mbean.CiudadMBean</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
@@ -45,7 +50,22 @@
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
 
-
+	<navigation-rule>
+		<display-name>EditarUsuario.xhtml</display-name>
+		<from-view-id>/pages/abm/usuario/EditarUsuario.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>LISTA_USUARIO</from-outcome>
+			<to-view-id>/pages/abm/usuario/ConsultarUsuarios.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>ConsultarUsuarios.xhtml</display-name>
+		<from-view-id>/pages/abm/usuario/ConsultarUsuarios.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>DETALLE_USUARIO</from-outcome>
+			<to-view-id>/pages/abm/usuario/EditarUsuario.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
 	<navigation-rule>
 		<display-name>EditarCiudad.xhtml</display-name>
 		<from-view-id>/pages/abm/ciudad/EditarCiudad.xhtml</from-view-id>

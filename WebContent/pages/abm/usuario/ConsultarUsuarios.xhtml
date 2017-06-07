@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	template="/pages/templates/template.xhtml">
+
+	<ui:define name="metadata">
+	</ui:define>
+
+	<ui:define name="content">
+		<h:head>Listado de Usuarios</h:head>
+		<h:body>
+			<h:form>
+				<p:dataTable id="table" var="usuario"
+					value="#{usuarioMBean.listarUsuarios()}" paginator="true" rows="10">
+					<p:column headerText="#{msg['label.codigo']}" style="color: red;">
+						<h:commandLink action="#{usuarioMBean.editar(usuario)}">
+							<h:outputText value="#{usuario.codigo}"></h:outputText>
+						</h:commandLink>
+					</p:column>
+					<p:column headerText="Username">
+						<h:outputText value="#{usuario.username}"></h:outputText>
+					</p:column>
+					<p:column headerText="Acciones">
+						<p:commandLink value="Eliminar" actionListener="#{usuarioMBean.eliminar(usuario)}"
+							update="table">
+							<p:confirm header="Eliminar" message="Está seguro?" icon="ui-icon-alert" />
+						</p:commandLink>
+						<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+							<p:commandButton value="Si" type="button"
+								styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+							<p:commandButton value="No" type="button"
+								styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+						</p:confirmDialog>
+					</p:column>
+				</p:dataTable>
+				<p:commandButton value="#{msg['label.nuevo']}" id="bNuevoUsuario"
+					action="#{usuarioMBean.nuevo()}" ajax="false">
+				</p:commandButton>
+			</h:form>
+		</h:body>
+	</ui:define>
+</ui:composition>
