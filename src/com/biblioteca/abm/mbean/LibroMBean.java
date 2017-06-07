@@ -5,6 +5,7 @@ import java.util.List;
 import javax.ejb.EJB;
 
 import org.biblioteca.abm.session.LibroSessionRemote;
+import org.biblioteca.entidad.Cliente;
 import org.biblioteca.entidad.Libro;
 
 public class LibroMBean {
@@ -46,6 +47,14 @@ public class LibroMBean {
 		this.libro = new Libro();
 		this.libro.setCodigo(0);
 		return "DETALLE_LIBRO";
+	}
+	
+	public void eliminar(Libro libroEliminar){
+		try {
+			cfr.eliminar(libroEliminar.getCodigo());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	// Getters y Setters

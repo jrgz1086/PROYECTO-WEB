@@ -13,7 +13,7 @@
 		<h:head>Listado de Clientes</h:head>
 		<h:body>
 			<h:form>
-				<p:dataTable var="cliente" value="#{clienteMBean.listarClientes()}">
+				<p:dataTable id="table" var="cliente" value="#{clienteMBean.listarClientes()}">
 					<p:column headerText="Codigo" style="color: red;">
 						<h:commandLink action="#{clienteMBean.editar(cliente)}">
 							<h:outputText value="#{cliente.codigo}"></h:outputText>
@@ -30,6 +30,19 @@
 					</p:column>
 					<p:column headerText="Observación">
 						<h:outputText value="#{cliente.obs}"></h:outputText>
+					</p:column>
+					<p:column headerText="Acciones">
+						<p:commandLink value="Eliminar"
+							actionListener="#{clienteMBean.eliminar(cliente)}" update="table">
+							<p:confirm header="Eliminar" message="Está seguro?"
+								icon="ui-icon-alert" />
+						</p:commandLink>
+						<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+							<p:commandButton value="Si" type="button"
+								styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+							<p:commandButton value="No" type="button"
+								styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+						</p:confirmDialog>
 					</p:column>
 				</p:dataTable>
 				<p:commandButton value="Nuevo" id="bNuevaCliente"

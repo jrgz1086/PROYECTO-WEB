@@ -6,17 +6,16 @@ import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 
-import org.biblioteca.abm.session.ClienteSessionRemote;
-import org.biblioteca.entidad.Ciudad;
-import org.biblioteca.entidad.Cliente;
+import org.biblioteca.abm.session.UsuarioSessionRemote;
+import org.biblioteca.entidad.Usuario;
 
-public class ClienteMBean {
-	private Cliente cliente;
+public class UsuarioMBean {
+	private Usuario usuario;
 	@EJB
-	ClienteSessionRemote cfr;
+	UsuarioSessionRemote cfr;
 
-	public List<Cliente> listarClientes() {
-		System.out.println("*** listarClientes *** ");
+	public List<Usuario> listarUsuarios() {
+		System.out.println("*** listarUsuarios *** ");
 		try {
 			return cfr.buscarTodos();
 		} catch (Exception e) {
@@ -28,7 +27,7 @@ public class ClienteMBean {
 	public String actualizar() {
 		System.out.println("*** actualizar *** ");
 		try {
-			cfr.actualizar(cliente);
+			cfr.actualizar(usuario);
 			String mensaje = FacesContext
 					.getCurrentInstance()
 					.getApplication()
@@ -41,40 +40,40 @@ public class ClienteMBean {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return "LISTA_CLIENTE";
+		return "LISTA_USUARIO";
 	}
 
 	public String irALaConsulta() {
-		return "LISTA_CLIENTE";
+		return "LISTA_USUARIO";
 	}
 
-	public String editar(Cliente clienteEditar) {
+	public String editar(Usuario usuarioEditar) {
 		System.out.println("*** editar ***");
-		this.cliente = clienteEditar;
-		return "DETALLE_CLIENTE";
+		this.usuario = usuarioEditar;
+		return "DETALLE_USUARIO";
 	}
 
 	public String nuevo() {
 		System.out.println("*** nuevo ***");
-		this.cliente = new Cliente();
-		this.cliente.setCodigo(0);
-		return "DETALLE_CLIENTE";
+		this.usuario = new Usuario();
+		this.usuario.setCodigo(0);
+		return "DETALLE_USUARIO";
 	}
 	
-	public void eliminar(Cliente clienteEliminar){
+	public void eliminar(Usuario usuarioEliminar){
 		try {
-			cfr.eliminar(clienteEliminar.getCodigo());
+			cfr.eliminar(usuarioEliminar.getCodigo());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
 	// Getters y Setters
-	public Cliente getCliente() {
-		return cliente;
+	public Usuario getUsuario() {
+		return usuario;
 	}
 
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 }

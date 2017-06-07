@@ -13,7 +13,7 @@
 		<h:head>Listado de Libros</h:head>
 		<h:body>
 			<h:form>
-				<p:dataTable var="libro" value="#{libroMBean.listarLibros()}">
+				<p:dataTable id="table" var="libro" value="#{libroMBean.listarLibros()}">
 					<p:column headerText="Codigo" style="color: red;">
 						<h:commandLink action="#{libroMBean.editar(libro)}">
 							<h:outputText value="#{libro.codigo}"></h:outputText>
@@ -27,6 +27,19 @@
 					</p:column>
 					<p:column headerText="Observación">
 						<h:outputText value="#{libro.obs}"></h:outputText>
+					</p:column>
+					<p:column headerText="Acciones">
+						<p:commandLink value="Eliminar"
+							actionListener="#{libroMBean.eliminar(libro)}" update="table">
+							<p:confirm header="Eliminar" message="Está seguro?"
+								icon="ui-icon-alert" />
+						</p:commandLink>
+						<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+							<p:commandButton value="Si" type="button"
+								styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+							<p:commandButton value="No" type="button"
+								styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+						</p:confirmDialog>
 					</p:column>
 				</p:dataTable>
 				<p:commandButton value="Nuevo" id="bNuevaLibro"
