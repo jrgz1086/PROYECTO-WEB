@@ -20,6 +20,11 @@
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
 	<managed-bean>
+		<managed-bean-name>autorMBean</managed-bean-name>
+		<managed-bean-class>com.biblioteca.abm.mbean.AutorMBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
 		<managed-bean-name>ciudadMBean</managed-bean-name>
 		<managed-bean-class>com.biblioteca.abm.mbean.CiudadMBean</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
@@ -66,6 +71,24 @@
 			<to-view-id>/pages/abm/usuario/EditarUsuario.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
+	
+	<navigation-rule>
+		<display-name>EditarAutor.xhtml</display-name>
+		<from-view-id>/pages/abm/autor/EditarAutor.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>LISTA_AUTOR</from-outcome>
+			<to-view-id>/pages/abm/autor/ConsultarAutores.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>ConsultarAutores.xhtml</display-name>
+		<from-view-id>/pages/abm/autor/ConsultarAutores.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>DETALLE_AUTOR</from-outcome>
+			<to-view-id>/pages/abm/autor/EditarAutor.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
 	<navigation-rule>
 		<display-name>EditarCiudad.xhtml</display-name>
 		<from-view-id>/pages/abm/ciudad/EditarCiudad.xhtml</from-view-id>

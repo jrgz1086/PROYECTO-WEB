@@ -144,4 +144,26 @@
     TITLE="DETALLE_USUARIO" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#abm#autor#EditarAutor.xhtml"
+  PATH="/pages/abm/autor/EditarAutor.xhtml" SHAPE="48,897,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#abm#autor#EditarAutor.xhtml:0"
+   NAME="item" PATH="/pages/abm/autor/EditarAutor.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="LISTA_AUTOR::#pages#abm#autor#ConsultarAutores.xhtml"
+    NAME="output" PATH="/pages/abm/autor/ConsultarAutores.xhtml"
+    TARGET="rules:#pages#abm#autor#ConsultarAutores.xhtml"
+    TITLE="LISTA_AUTOR" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#abm#autor#ConsultarAutores.xhtml"
+  PATH="/pages/abm/autor/ConsultarAutores.xhtml" SHAPE="240,1025,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#abm#autor#ConsultarAutores.xhtml:0"
+   NAME="item" PATH="/pages/abm/autor/ConsultarAutores.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="DETALLE_AUTOR::#pages#abm#autor#EditarAutor.xhtml" NAME="output"
+    PATH="/pages/abm/autor/EditarAutor.xhtml"
+    TARGET="rules:#pages#abm#autor#EditarAutor.xhtml"
+    TITLE="DETALLE_AUTOR" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
 </PROCESS>
