@@ -17,9 +17,9 @@ public class InternacionalizacionBean implements Serializable {
 	private static Map<String, Object> idiomas;
 	static {
 		idiomas = new LinkedHashMap<String, Object>();
-		idiomas.put("Español", new Locale("es")); // label, value
+		idiomas.put("EspaÃ±ol", new Locale("es")); // label, value
 		idiomas.put("Portugues", new Locale("pt"));
-		idiomas.put("Inglés", new Locale("en"));
+		idiomas.put("Ingles", new Locale("en"));
 	}
 
 	public void cambiarIdioma(ValueChangeEvent e) {

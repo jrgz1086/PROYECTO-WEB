@@ -4,7 +4,11 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.HashMap;
+
 import javax.faces.bean.ManagedBean;
+
+import com.biblioteca.util.GlobalConfig;
+
 import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
@@ -15,11 +19,11 @@ public class InformeCiudadMBean {
 	private Integer hasta;
 
 	public String imprimir() {
+		String connectionString = "jdbc:postgresql://"+
+				GlobalConfig.REPORT_DB_HOST + "/" + GlobalConfig.REPORT_DB_NAME;
 		try {
 			Class.forName("org.postgresql.Driver");
-			Connection conn = DriverManager.getConnection(
-					"jdbc:postgresql://localhost/bd_biblioteca", "postgres",
-					"admin");
+			Connection conn = DriverManager.getConnection(connectionString, GlobalConfig.REPORT_DB_USER, GlobalConfig.REPORT_DB_PASS);
 			URL reportPathUrl = InformeCiudadMBean.class
 					.getResource("InformeCiudad.jasper");
 			String reportPathName = reportPathUrl.getFile();
