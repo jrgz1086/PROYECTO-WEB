@@ -1,37 +1,56 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
 	xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
-	<title>Página de Login</title>
+	<title>Biblioteca</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" href="estilo.css" />
+
 </h:head>
 <h:body>
 	<f:view>
-		<h:form id="loginForm">
-			<table frame="box">
-				<tr>
-					<th>Acceso al Sistema</th>
-				</tr>
-				<tr>
-					<td><h:outputText value="Usuario: " /></td>
-					<td><h:inputText id="inputName" value="#{loginMBean.username}"
-							required="true"
-							requiredMessage="El nombre de usuario no puede ser vacio" /></td>
-					<td><h:message for="inputName" style="color:red" /></td>
-				</tr>
-				<tr>
-					<td><h:outputText value="Password:" /></td>
-					<td><h:inputSecret id="inputPassword"
-							value="#{loginMBean.password}" required="true"
-							requiredMessage="El Password no puede ser vacío" /></td>
-					<td><h:message for="inputPassword" style="color:red" /></td>
-				</tr>
-				<tr>
-					<td colspan="2"><h:commandButton value="Ingresar"
-							action="#{loginMBean.verificarLogin}" /></td>
-				</tr>
-			</table>
-		</h:form>
+		<div class="container">
+			<div class="wrapper">
+				<form name="Login_Form" class="form-signin">
+					<h:form >
+					<p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+					<div class="ui-g" align="center">
+						<img src="library.png" alt="Biblioteca"/>	
+						<h2>Sistema de Biblioteca</h2>
+						<br/>
+						<div class="ui-g-12">
+							<p:inputText id="username" value="#{loginMBean.username}"
+								required="true" label="username" placeholder="Usuario"/>
+						</div>
+						<br/>
+						<div class="ui-g-12">
+							<p:password id="password" value="#{loginMBean.password}"
+								required="true" label="password" placeholder="Password"/>
+						</div>
+						<div class="ui-g-12">
+							<p:commandButton value="Login" update="growl"
+								action="#{loginMBean.verificarLogin}" process="@form"/>
+						</div>
+						<br/>
+						<p>Jorge R. González Zárate</p>
+						<p>Usuario: jgonzalez</p>
+						<p>Password: 1234</p>
+					</div>
+					</h:form>
+				</form>
+			</div>
+		</div>
 	</f:view>
 </h:body>
 </html>

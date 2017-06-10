@@ -6,11 +6,15 @@
 	xmlns:f="http://java.sun.com/jsf/core">
 	<center>
 		<h:form>
-			<h:outputText value="#{msg['nombre.sistema']}" /> Idioma: <h:selectOneMenu
+			<h:outputText value="#{msg['nombre.sistema']}"/>
+				Idioma: 
+			<h:selectOneMenu
 				value="#{internacionalizacion.codigoIdioma}" onchange="submit()"
 				valueChangeListener="#{internacionalizacion.cambiarIdioma}">
 				<f:selectItems value="#{internacionalizacion.idiomas}" />
 			</h:selectOneMenu>
+			
+			
 			<p:commandButton value="Logout" action="#{loginMBean.logout}" />
 		</h:form>
 	</center>
